@@ -15,11 +15,12 @@
 /**
  * Exit if accessed directly.
  */
+/*
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
-
-new MS_Breadcrumb();
+*/
+// new MS_Breadcrumb();
 
 class MS_Breadcrumb {
 
