@@ -16,10 +16,10 @@
 
 /**
  * Exit if accessed directly.
- *//*
+ */
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
-}*/
+}
 
 //new MS_Breadcrumb();
 
