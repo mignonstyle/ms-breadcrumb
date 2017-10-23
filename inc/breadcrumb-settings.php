@@ -1,6 +1,6 @@
 <?php
 /**
- * Create array for breadcrumbs.
+ * Create array for breadcrumbs
  *
  * @package   ms-breadcrumb
  * @copyright Mignon Style
@@ -9,6 +9,11 @@
 
 class MS_Breadcrumb_Settings {
 
+	/**
+	 * Store each item of breadcrumbs in ascending order.
+	 *
+	 * @var array
+	 */
 	public function __construct() {
 
 	}
