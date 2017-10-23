@@ -2,11 +2,12 @@
 /**
  * Create array for breadcrumbs
  *
- * @package   ms-breadcrumb
- * @copyright Mignon Style
- * @version   1.0
+ * @category MS_Breadcrumb_Settings
+ * @package  ms-breadcrumb
+ * @author   Mignon Style
+ * @license  GPLv2 or later
+ * @version  1.0
  */
-
 class MS_Breadcrumb_Settings {
 
 	/**
