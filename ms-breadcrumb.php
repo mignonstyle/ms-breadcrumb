@@ -32,5 +32,13 @@ class MS_Breadcrumb {
 	 * Constructor Define.
 	 */
 	public function __construct() {
+		add_action( 'plugins_loaded', array( $this, 'load_textdomain' ) );
+	}
+
+	/**
+	 * Register our text domain.
+	 */
+	function load_textdomain() {
+		load_plugin_textdomain( 'ms-breadcrumb', false, basename( dirname( __FILE__ ) ) . '/languages' );
 	}
 }
