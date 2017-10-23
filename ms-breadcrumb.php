@@ -21,7 +21,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-//new MS_Breadcrumb();
+new MS_Breadcrumb();
 
 /**
  * MS Breadcrumb Basic class
@@ -32,22 +32,5 @@ class MS_Breadcrumb {
 	 * Constructor Define.
 	 */
 	public function __construct() {
-		add_action( 'init', array( $this, 'init' ) );
-		add_action( 'plugins_loaded', array( $this, 'load_textdomain' ) );
-	}
-
-	/**
-	 * Load breadcrumb functions.
-	 */
-	function init() {
-		require_once( plugin_dir_path( __FILE__ ) . 'inc/breadcrumb-settings.php' );
-		new MS_Breadcrumb_Settings();
-	}
-
-	/**
-	 * Register our text domain.
-	 */
-	function load_textdomain() {
-		load_plugin_textdomain( 'ms-breadcrumb', false, basename( dirname( __FILE__ ) ) . '/languages' );
 	}
 }
