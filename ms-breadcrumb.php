@@ -10,6 +10,8 @@
  * License: GPLv2 or later
  * License URI: https://www.gnu.org/licenses/gpl-2.0.html
  * Version: 0.1
+ *
+ * @package ms-breadcrumb
  */
 
 /**
@@ -21,6 +23,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 new MS_Breadcrumb();
 
+/**
+ * MS Breadcrumb Basic class
+ */
 class MS_Breadcrumb {
 
 	/**
