@@ -45,13 +45,14 @@ class MS_Breadcrumb_Single extends MS_Breadcrumb_Abstract {
 		$term_key  = key( $terms );
 		$parent_id = 0;
 
-		foreach( $terms as $key => $object ) {
-			if ( $object->parent > 0 && ( $parent_id === 0 || $object->parent === $parent_id ) ) {
+		foreach ( $terms as $key => $object ) {
+
+			if ( 0 < $object->parent && ( 0 === $parent_id || $object->parent === $parent_id ) ) {
 				$term_key  = $key;
 				$parent_id = $object->term_id;
 			}
 		}
-		$term = $terms[$term_key];
+		$term = $terms[ $term_key ];
 
 		$this->set_ancestors( $parent_id, $taxonomy );
 		$this->set( $term->name, get_term_link( $term ) );
