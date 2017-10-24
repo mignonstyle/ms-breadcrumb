@@ -1,8 +1,7 @@
 <?php
 /**
- * Create array for breadcrumbs
+ * Create array for breadcrumbs file
  *
- * @category MS_Breadcrumb_Settings
  * @package  ms-breadcrumb
  * @author   Mignon Style
  * @license  GPLv2 or later
