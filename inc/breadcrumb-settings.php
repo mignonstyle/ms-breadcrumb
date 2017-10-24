@@ -48,27 +48,17 @@ class MS_Breadcrumb_Settings {
 	public function display_breadcrumb_items() {
 
  		if ( is_404() ) {
-
  		} elseif ( is_search() ) {
-
  		} elseif ( is_attachment() ) {
-
  		} elseif ( is_category() || is_tag() || is_tax() ) {
-
  		} elseif ( is_page() && ! is_front_page() ) {
-
  		} elseif ( is_single() ) {
-
  		} elseif ( is_author() ) {
-
  		} elseif ( is_date() ) {
-
  		} elseif ( is_post_type_archive() ) {
-
  		}
 
  		if ( ! ( is_front_page() || is_home() ) ) {
-
  		}
  	}
 

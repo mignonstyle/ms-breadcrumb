@@ -13,6 +13,18 @@
  */
 abstract class MS_Breadcrumb_Abstract {
 
+	/**
+	 * Store each item of breadcrumbs in ascending order.
+	 *
+	 * @var array
+	 */
+	protected $breadcrumbs = array();
 
+	/**
+	 * Constructor Define.
+	 */
+	public function __construct() {
+		$this->set_items();
+	}
 
 }
