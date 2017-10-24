@@ -27,7 +27,25 @@ abstract class MS_Breadcrumb_Abstract {
 		$this->set_items();
 	}
 
+	/**
+	 * Adds a item.
+	 *
+	 * @param string $title breadcrumb title.
+	 * @param string $link  breadcrumb url.
+	 */
+	protected function set( $title, $link = '' ) {
+		$this->breadcrumbs[] = array(
+			'title' => $title,
+			'link'  => $link,
+		);
+	}
 
-
-
+	/**
+	 * Return breadcrumbs items.
+	 *
+	 * @return array
+	 */
+	public function get() {
+		return $this->breadcrumbs;
+	}
 }
