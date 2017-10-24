@@ -27,6 +27,7 @@ class MS_Breadcrumb_Blog extends MS_Breadcrumb_Abstract {
 		$page_for_posts = get_option( 'page_for_posts' );
 
 		if ( 'page' === $show_on_front && $page_for_posts && is_home() ) {
+
 			$label = get_the_title( $page_for_posts );
 			$url   = get_permalink( $page_for_posts );
 
