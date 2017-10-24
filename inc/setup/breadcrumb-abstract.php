@@ -9,7 +9,7 @@
  */
 
 /**
- * Abstract class MS_Breadcrumb_Abstract
+ * Abstract class MS_Breadcrumb_Abstract.
  */
 abstract class MS_Breadcrumb_Abstract {
 

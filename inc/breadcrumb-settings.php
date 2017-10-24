@@ -1,6 +1,6 @@
 <?php
 /**
- * Create array for breadcrumbs file
+ * Create array for breadcrumbs file.
  *
  * @package ms-breadcrumb
  * @author  Mignon Style
@@ -9,7 +9,7 @@
  */
 
 /**
- * Class MS_Breadcrumb_Settings
+ * Class MS_Breadcrumb_Settings.
  */
 class MS_Breadcrumb_Settings {
 

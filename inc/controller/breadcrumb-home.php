@@ -9,12 +9,12 @@
  */
 
 /**
- * Class MS_Breadcrumb_Home
+ * Class MS_Breadcrumb_Home.
  */
 class MS_Breadcrumb_Home extends MS_Breadcrumb_Abstract {
 
 	/**
-	 * Sets breadcrumbs items
+	 * Sets breadcrumbs items.
 	 *
 	 * @return void
 	 */

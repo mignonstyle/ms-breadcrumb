@@ -24,7 +24,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 new MS_Breadcrumb();
 
 /**
- * Class MS_Breadcrumb
+ * Class MS_Breadcrumb.
  */
 class MS_Breadcrumb {
 
