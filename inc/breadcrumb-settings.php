@@ -100,7 +100,7 @@ class MS_Breadcrumb_Settings {
 		$breadcrumb = new MS_Breadcrumb_Home();
 		$this->_set_items( $breadcrumb->get() );
 
-		$breadcrumb = new MS_Breadcrumb_Blog();
+		$breadcrumb = new MS_Breadcrumb_Post_type();
 		$this->_set_items( $breadcrumb->get() );
 
 		if ( is_404() ) {
