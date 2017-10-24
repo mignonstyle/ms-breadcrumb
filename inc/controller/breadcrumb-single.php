@@ -19,10 +19,8 @@ class MS_Breadcrumb_Single extends MS_Breadcrumb_Abstract {
 	 * @return void
 	 */
 	protected function set_items() {
-		$post_id   = get_the_ID();
-		$taxonomy  = $this->get_post_taxonomy( $post_id );
-
-		$this->set_post_type_links( $post_id );
+		$post_id  = get_the_ID();
+		$taxonomy = $this->get_post_taxonomy( $post_id );
 
 		if ( $taxonomy ) {
 			$this->set_terms( $post_id, $taxonomy );
