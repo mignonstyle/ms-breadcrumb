@@ -93,6 +93,10 @@ class MS_Breadcrumb_Settings {
 	 */
 	public function display_breadcrumb_items() {
 
+		if ( is_admin() ) {
+			return;
+		}
+
 		$breadcrumb = new MS_Breadcrumb_Home();
 		$this->_set_items( $breadcrumb->get() );
 

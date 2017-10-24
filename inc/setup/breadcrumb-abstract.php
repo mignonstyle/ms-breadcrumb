@@ -106,4 +106,25 @@ abstract class MS_Breadcrumb_Abstract {
 			return $archive_link;
 		}
 	}
+
+	/**
+	 * Return the current post type.
+	 *
+	 * @return string
+	 */
+	protected function get_post_type() {
+		global $wp_query;
+
+		$post_type = get_post_type();
+
+		if ( $post_type ) {
+			return $post_type;
+		}
+
+		if ( isset( $wp_query->query['post_type'] ) ) {
+			return $wp_query->query['post_type'];
+		}
+
+		return $post_type;
+	}
 }
