@@ -96,6 +96,9 @@ class MS_Breadcrumb_Settings {
 		$breadcrumb = new MS_Breadcrumb_Home();
 		$this->_set_items( $breadcrumb->get() );
 
+		$breadcrumb = new MS_Breadcrumb_Blog();
+		$this->_set_items( $breadcrumb->get() );
+
 		if ( is_404() ) {
 		} elseif ( is_search() ) {
 		} elseif ( is_attachment() ) {
