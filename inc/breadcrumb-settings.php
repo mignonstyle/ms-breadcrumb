@@ -35,5 +35,51 @@ class MS_Breadcrumb_Settings {
 				require_once( $file );
 			}
 		}
+
+		$this->display_breadcrumb_items();
+
+	}
+
+	/**
+	 * Display breadcrumb item functions.
+	 *
+	 * @return void
+	 */
+	public function display_breadcrumb_items() {
+
+	}
+
+	/**
+	 * Sets breadcrumbs items.
+	 *
+	 * @param array $items
+	 * @return void
+	 */
+	protected function _set_items( $items ) {
+		foreach ( $items as $item ) {
+			$this->_set( $item['title'], $item['link'] );
+		}
+	}
+
+	/**
+	 * Adds a item.
+	 *
+	 * @param string $title
+	 * @param string $link
+	 */
+	protected function _set( $title, $link = '' ) {
+		$this->breadcrumbs[] = array(
+			'title' => $title,
+			'link'  => $link,
+		);
+	}
+
+	/**
+	 * Gets breadcrumbs items.
+	 *
+	 * @return array
+	 */
+	public function get() {
+		return apply_filters( 'ms_breadcrumb_items', $this->breadcrumbs );
 	}
 }
