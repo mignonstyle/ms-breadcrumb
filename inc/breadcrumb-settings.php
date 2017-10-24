@@ -106,6 +106,7 @@ class MS_Breadcrumb_Settings {
 		} elseif ( is_attachment() ) {
 			$breadcrumb = new MS_Breadcrumb_Attachment();
 		} elseif ( is_category() || is_tag() || is_tax() ) {
+			$breadcrumb = new MS_Breadcrumb_Term();
 		} elseif ( is_page() && ! is_front_page() ) {
 		} elseif ( is_single() ) {
 		} elseif ( is_author() ) {
@@ -114,6 +115,7 @@ class MS_Breadcrumb_Settings {
 		}
 
 		if ( ! ( is_front_page() || is_home() ) ) {
+			$this->_set_items( $breadcrumb->get() );
 		}
 	}
 }

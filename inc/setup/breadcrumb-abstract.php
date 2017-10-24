@@ -28,6 +28,13 @@ abstract class MS_Breadcrumb_Abstract {
 	}
 
 	/**
+	 * Sets breadcrumbs items.
+	 *
+	 * @return void
+	 */
+	abstract protected function set_items();
+
+	/**
 	 * Adds a item.
 	 *
 	 * @param string $title breadcrumb title.
@@ -47,5 +54,56 @@ abstract class MS_Breadcrumb_Abstract {
 	 */
 	public function get() {
 		return $this->breadcrumbs;
+	}
+
+	/**
+	 * Set the ancestors of the specified page or taxonomy.
+	 *
+	 * @param int $object_id Post ID or Term ID.
+	 * @param string $object_type taxonomy slug.
+	 */
+	protected function set_ancestors( $object_id, $object_type ) {
+		$ancestors = get_ancestors( $object_id, $object_type );
+		krsort( $ancestors );
+
+		if ( 'page' === $object_type ) {
+			foreach ( $ancestors as $ancestor_id ) {
+				$this->set( get_the_title( $ancestor_id ), get_permalink( $ancestor_id ) );
+			}
+		} else {
+			foreach ( $ancestors as $ancestor_id ) {
+				$ancestor = get_term( $ancestor_id, $object_type );
+				$this->set( $ancestor->name, get_term_link( $ancestor ) );
+			}
+		}
+	}
+
+	/**
+	 * Return custom post type archive label.
+	 *
+	 * @param string $post_type custom post type name.
+	 * @return null|string
+	 */
+	protected function get_post_type_archive_label( $post_type ) {
+		$post_type_object = get_post_type_object( $post_type );
+		$label            = $post_type_object->label;
+
+		if ( $label ) {
+			return $label;
+		}
+	}
+
+	/**
+	 * Return custom post type archive page url.
+	 *
+	 * @param string $post_type custom post type name.
+	 * @return null|string
+	 */
+	protected function get_post_type_archive_link( $post_type ) {
+		$archive_link = get_post_type_archive_link( $post_type );
+
+		if ( $archive_link ) {
+			return $archive_link;
+		}
 	}
 }
