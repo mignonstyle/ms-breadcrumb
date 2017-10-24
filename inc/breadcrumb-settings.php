@@ -108,6 +108,7 @@ class MS_Breadcrumb_Settings {
 		} elseif ( is_category() || is_tag() || is_tax() ) {
 			$breadcrumb = new MS_Breadcrumb_Term();
 		} elseif ( is_page() && ! is_front_page() ) {
+			$breadcrumb = new MS_Breadcrumb_Page();
 		} elseif ( is_single() ) {
 		} elseif ( is_author() ) {
 		} elseif ( is_date() ) {
