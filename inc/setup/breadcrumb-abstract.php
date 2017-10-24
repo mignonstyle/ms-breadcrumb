@@ -79,9 +79,25 @@ abstract class MS_Breadcrumb_Abstract {
 	}
 
 	/**
+	 * Set the post type link.
+	 *
+	 * @param string $post_id post id.
+	 */
+	protected function set_post_type_links( $post_id ) {
+		$post_type = $this->get_post_type( $post_id );
+
+		if ( $post_type && 'post' !== $post_type ) {
+			$label = $this->get_post_type_archive_label( $post_type );
+			$url   = $this->get_post_type_archive_link( $post_type );
+
+			$this->set( $label, $url );
+		}
+	}
+
+	/**
 	 * Return custom post type archive label.
 	 *
-	 * @param string $post_type custom post type name.
+	 * @param string $post_type post type name.
 	 * @return null|string
 	 */
 	protected function get_post_type_archive_label( $post_type ) {
@@ -96,7 +112,7 @@ abstract class MS_Breadcrumb_Abstract {
 	/**
 	 * Return custom post type archive page url.
 	 *
-	 * @param string $post_type custom post type name.
+	 * @param string $post_type post type name.
 	 * @return null|string
 	 */
 	protected function get_post_type_archive_link( $post_type ) {
@@ -108,7 +124,7 @@ abstract class MS_Breadcrumb_Abstract {
 	}
 
 	/**
-	 * Return the current post type.
+	 * Return the post type.
 	 *
 	 * @param string $post_id post id.
 	 * @return string
