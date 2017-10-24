@@ -38,6 +38,7 @@ class MS_Breadcrumb_Settings {
 
 		$this->display_breadcrumb_items();
 
+		add_shortcode( 'ms-breadcrumb', array( $this, 'display_markup' ) );
 	}
 
 	/**
@@ -72,6 +73,17 @@ class MS_Breadcrumb_Settings {
 	 */
 	public function get() {
 		return apply_filters( 'ms_breadcrumb_items', $this->breadcrumbs );
+	}
+
+	/**
+	 * Display breadcrumbs.
+	 *
+	 * @return string
+	 */
+	public function display_markup() {
+		$breadcrumb_markup = new MS_Breadcrumb_Markup();
+
+		return $breadcrumb_markup->breadcrumb_html();
 	}
 
 	/**
