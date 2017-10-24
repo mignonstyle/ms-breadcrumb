@@ -81,6 +81,9 @@ class MS_Breadcrumb_Settings {
 	 */
 	public function display_breadcrumb_items() {
 
+		$breadcrumb = new MS_Breadcrumb_Home();
+		$this->_set_items( $breadcrumb->get() );
+
 		if ( is_404() ) {
 		} elseif ( is_search() ) {
 		} elseif ( is_attachment() ) {
