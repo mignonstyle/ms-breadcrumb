@@ -19,41 +19,43 @@ class MS_Breadcrumb_Post_Type extends MS_Breadcrumb_Abstract {
 	 * @return void
 	 */
 	protected function set_items() {
-		if ( ! ( is_category() || is_tag() || is_date() || is_author() || is_single() ) ) {
-			return;
-		}
-
 		$post_id   = get_the_ID();
 		$post_type = $this->get_post_type( $post_id );
-		$label     = '';
-		$url       = '';
 
-		if ( ! $post_type ) {
+		if ( is_post_type_archive() || is_home() || is_search() || is_404() || 'page' == $post_type ) {
 			return;
 		}
 
+		// If the contribution type is an attachment.
 		if ( 'attachment' == $post_type ) {
+			// Acquire post id of attachment's parent.
 			$parent_id = $this->get_attachment_parent_id();
 
 			if ( $parent_id ) {
+				// Acquire post type of attachment's parent.
 				$post_type = get_post_type( $parent_id );
+			} else {
+				return;
 			}
 		}
 
-		if ( 'post' === $post_type ) {
+		// If the post type is post.
+		if ( 'post' == $post_type ) {
 			$show_on_front  = get_option( 'show_on_front' );
 			$page_for_posts = get_option( 'page_for_posts' );
 
+			// When front page display is set.
 			if ( 'page' === $show_on_front && $page_for_posts ) {
 				$label = get_the_title( $page_for_posts );
 				$url   = get_permalink( $page_for_posts );
+
+				$this->set( $label, $url );
 			}
-		} elseif ( 'attachment' != $post_type ) {
+		} else {
+			// Display post type if post type is custom post type.
 			$label = $this->get_post_type_archive_label( $post_type );
 			$url   = $this->get_post_type_archive_link( $post_type );
-		}
 
-		if ( $label && $url ) {
 			$this->set( $label, $url );
 		}
 	}
