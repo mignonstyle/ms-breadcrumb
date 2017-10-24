@@ -11,7 +11,7 @@
 /**
  * Class MS_Breadcrumb_Post_type.
  */
-class MS_Breadcrumb_Post_type extends MS_Breadcrumb_Abstract {
+class MS_Breadcrumb_Post_Type extends MS_Breadcrumb_Abstract {
 
 	/**
 	 * Sets breadcrumbs items
