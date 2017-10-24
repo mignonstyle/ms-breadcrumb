@@ -121,8 +121,8 @@ abstract class MS_Breadcrumb_Abstract {
 			return $post_type;
 		}
 
-		if ( isset( $wp_query->query[ 'post_type' ] ) ) {
-			return $wp_query->query[ 'post_type' ];
+		if ( isset( $wp_query->query['post_type'] ) ) {
+			return $wp_query->query['post_type'];
 		}
 
 		return $post_type;
