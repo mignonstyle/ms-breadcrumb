@@ -22,10 +22,13 @@ class MS_Breadcrumb_Home extends MS_Breadcrumb_Abstract {
 		$label = get_bloginfo( 'name' );
 		$url   = get_home_url();
 
-		if ( is_front_page() || is_home() ) {
-			$this->set( $label );
-		} else {
-			$this->set( $label, $url );
+		$show_on_front  = get_option( 'show_on_front' );
+		$page_for_posts = get_option( 'page_for_posts' );
+
+		if ( ( is_home() && is_front_page() ) || ( 'page' === $show_on_front && $page_for_posts ) && is_front_page() ) {
+			$url = '';
 		}
+
+		$this->set( $label, $url );
 	}
 }
