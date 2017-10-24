@@ -7,6 +7,10 @@
  * @license  GPLv2 or later
  * @version  1.0
  */
+
+/**
+ * Class MS_Breadcrumb_Settings
+ */
 class MS_Breadcrumb_Settings {
 
 	/**
