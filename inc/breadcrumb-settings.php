@@ -116,6 +116,7 @@ class MS_Breadcrumb_Settings {
 		} elseif ( is_date() ) {
 			$breadcrumb = new MS_Breadcrumb_Date();
 		} elseif ( is_post_type_archive() ) {
+			$breadcrumb = new MS_Breadcrumb_Post_Type_Archive();
 		}
 
 		if ( ! ( is_front_page() || is_home() ) ) {
