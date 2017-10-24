@@ -22,7 +22,7 @@ class MS_Breadcrumb_Search extends MS_Breadcrumb_Abstract {
 		$this->set(
 			sprintf(
 				/* translators: %s: search string */
-				__( 'Search results of "%s"', 'ms-breadcrumb' ),
+				__( 'Search results of \'%s\'', 'ms-breadcrumb' ),
 				get_search_query()
 			)
 		);
