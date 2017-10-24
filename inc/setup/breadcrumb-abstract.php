@@ -127,4 +127,52 @@ abstract class MS_Breadcrumb_Abstract {
 
 		return $post_type;
 	}
+
+	/**
+	 * Return the post taxonomy.
+	 *
+	 * @param string $post_id post id.
+	 * @return string
+	 */
+	protected function get_post_taxonomy( $post_id ) {
+		$taxonomies = get_post_taxonomies( $post_id );
+
+		if ( ! $taxonomies ) {
+			return;
+		}
+
+		$taxonomy = array_shift( $taxonomies );
+
+		return $taxonomy;
+	}
+
+	/**
+	 * Sets Breadcrumbs items of terms or categories.
+	 *
+	 * @param string $post_id post id.
+	 * @param string $taxonomy taxonomy slug.
+	 * @return void
+	 */
+	protected function set_terms( $post_id, $taxonomy ) {
+		$terms = get_the_terms( $post_id, $taxonomy );
+
+		if ( ! is_array( $terms ) ) {
+			return;
+		}
+
+		$term_key  = key( $terms );
+		$parent_id = 0;
+
+		foreach ( $terms as $key => $object ) {
+
+			if ( 0 < $object->parent && ( 0 === $parent_id || $object->parent === $parent_id ) ) {
+				$term_key  = $key;
+				$parent_id = $object->term_id;
+			}
+		}
+		$term = $terms[ $term_key ];
+
+		$this->set_ancestors( $parent_id, $taxonomy );
+		$this->set( $term->name, get_term_link( $term ) );
+	}
 }
