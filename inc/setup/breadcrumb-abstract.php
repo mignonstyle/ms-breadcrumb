@@ -59,7 +59,7 @@ abstract class MS_Breadcrumb_Abstract {
 	/**
 	 * Set the ancestors of the specified page or taxonomy.
 	 *
-	 * @param int $object_id Post ID or Term ID.
+	 * @param int    $object_id Post ID or Term ID.
 	 * @param string $object_type taxonomy slug.
 	 */
 	protected function set_ancestors( $object_id, $object_type ) {
