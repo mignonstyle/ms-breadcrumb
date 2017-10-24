@@ -28,15 +28,9 @@ class MS_Breadcrumb_Attachment extends MS_Breadcrumb_Abstract {
 
 			if ( $parent_post ) {
 				$parent_id = $parent_post->ID;
-				$post_type = $this->get_post_type( $parent_id );
 				$taxonomy  = $this->get_post_taxonomy( $parent_id );
 
-				if ( ! ( 'post' == $post_type ) ) {
-					$label = $this->get_post_type_archive_label( $post_type );
-					$url   = $this->get_post_type_archive_link( $post_type );
-
-					$this->set( $label, $url );
-				}
+				$this->set_post_type_links( $parent_id );
 
 				if ( $taxonomy ) {
 					$this->set_terms( $parent_id, $taxonomy );
