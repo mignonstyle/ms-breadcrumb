@@ -21,7 +21,8 @@ class MS_Breadcrumb_Search extends MS_Breadcrumb_Abstract {
 	protected function set_items() {
 		$this->set(
 			sprintf(
-				__( 'Search results of "%1$s"', 'ms-breadcrumb' ),
+				/* translators: %s: search string */
+				__( 'Search results of "%s"', 'ms-breadcrumb' ),
 				get_search_query()
 			)
 		);
