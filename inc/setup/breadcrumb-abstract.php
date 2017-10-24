@@ -86,10 +86,13 @@ abstract class MS_Breadcrumb_Abstract {
 	 */
 	protected function get_post_type_archive_label( $post_type ) {
 		$post_type_object = get_post_type_object( $post_type );
-		$label            = $post_type_object->label;
 
-		if ( $label ) {
-			return $label;
+		if ( $post_type_object ) {
+			$label = $post_type_object->label;
+
+			if ( $label ) {
+				return $label;
+			}
 		}
 	}
 
@@ -184,7 +187,6 @@ abstract class MS_Breadcrumb_Abstract {
 	 */
 	protected function get_attachment_parent_id() {
 		global $post;
-
 		$attachment_parent = $post->post_parent;
 
 		if ( $attachment_parent ) {
@@ -196,5 +198,17 @@ abstract class MS_Breadcrumb_Abstract {
 				return $parent_id;
 			}
 		}
+	}
+
+	/**
+	 * Determines if the currently viewed page is one of the blog pages.
+	 *
+	 * @return bool
+	 */
+	protected function is_blog() {
+		global $post;
+		$post_type = get_post_type( $post );
+
+		return ( is_author() || is_category() || is_tag() || is_date() || is_home() || is_single() ) && 'post' == $post_type;
 	}
 }
