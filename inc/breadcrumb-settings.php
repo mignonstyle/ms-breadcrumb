@@ -114,6 +114,7 @@ class MS_Breadcrumb_Settings {
 		} elseif ( is_author() ) {
 			$breadcrumb = new MS_Breadcrumb_Author();
 		} elseif ( is_date() ) {
+			$breadcrumb = new MS_Breadcrumb_Date();
 		} elseif ( is_post_type_archive() ) {
 		}
 
