@@ -102,7 +102,9 @@ class MS_Breadcrumb_Settings {
 		if ( is_404() ) {
 			$breadcrumb = new MS_Breadcrumb_Not_Found();
 		} elseif ( is_search() ) {
+			$breadcrumb = new MS_Breadcrumb_Search();
 		} elseif ( is_attachment() ) {
+			$breadcrumb = new MS_Breadcrumb_Attachment();
 		} elseif ( is_category() || is_tag() || is_tax() ) {
 		} elseif ( is_page() && ! is_front_page() ) {
 		} elseif ( is_single() ) {
