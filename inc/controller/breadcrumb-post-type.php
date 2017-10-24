@@ -19,24 +19,41 @@ class MS_Breadcrumb_Post_Type extends MS_Breadcrumb_Abstract {
 	 * @return void
 	 */
 	protected function set_items() {
-		if ( ! ( is_category() || is_tag() || is_date() || is_author() || is_single() || is_404() ) ) {
+		if ( ! ( is_category() || is_tag() || is_date() || is_author() || is_single() ) ) {
 			return;
 		}
 
-		$show_on_front  = get_option( 'show_on_front' );
-		$page_for_posts = get_option( 'page_for_posts' );
+		$post_id   = get_the_ID();
+		$post_type = $this->get_post_type( $post_id );
+		$label     = '';
+		$url       = '';
 
-		if ( 'page' === $show_on_front && $page_for_posts ) {
-			$post_type = $this->get_post_type();
+		if ( ! $post_type ) {
+			return;
+		}
 
-			if ( $post_type && 'post' == $post_type || 'attachment' == $post_type ) {
+		if ( 'attachment' == $post_type ) {
+			$parent_id = $this->get_attachment_parent_id();
+
+			if ( $parent_id ) {
+				$post_type = get_post_type( $parent_id );
+			}
+		}
+
+		if ( 'post' === $post_type ) {
+			$show_on_front  = get_option( 'show_on_front' );
+			$page_for_posts = get_option( 'page_for_posts' );
+
+			if ( 'page' === $show_on_front && $page_for_posts ) {
 				$label = get_the_title( $page_for_posts );
 				$url   = get_permalink( $page_for_posts );
-			} else {
-				$label = $this->get_post_type_archive_label( $post_type );
-				$url   = $this->get_post_type_archive_link( $post_type );
 			}
+		} elseif ( 'attachment' != $post_type ) {
+			$label = $this->get_post_type_archive_label( $post_type );
+			$url   = $this->get_post_type_archive_link( $post_type );
+		}
 
+		if ( $label && $url ) {
 			$this->set( $label, $url );
 		}
 	}
