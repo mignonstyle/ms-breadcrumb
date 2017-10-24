@@ -47,12 +47,35 @@ class MS_Breadcrumb_Settings {
 	 */
 	public function display_breadcrumb_items() {
 
-	}
+ 		if ( is_404() ) {
+
+ 		} elseif ( is_search() ) {
+
+ 		} elseif ( is_attachment() ) {
+
+ 		} elseif ( is_category() || is_tag() || is_tax() ) {
+
+ 		} elseif ( is_page() && ! is_front_page() ) {
+
+ 		} elseif ( is_single() ) {
+
+ 		} elseif ( is_author() ) {
+
+ 		} elseif ( is_date() ) {
+
+ 		} elseif ( is_post_type_archive() ) {
+
+ 		}
+
+ 		if ( ! ( is_front_page() || is_home() ) ) {
+
+ 		}
+ 	}
 
 	/**
 	 * Sets breadcrumbs items.
 	 *
-	 * @param array $items breadcrumb items.
+	 * @param array $items breadcrumb item.
 	 * @return void
 	 */
 	protected function _set_items( $items ) {
@@ -64,8 +87,8 @@ class MS_Breadcrumb_Settings {
 	/**
 	 * Adds a item.
 	 *
-	 * @param string $title title.
-	 * @param string $link url.
+	 * @param string $title breadcrumb title.
+	 * @param string $link  breadcrumb url.
 	 */
 	protected function _set( $title, $link = '' ) {
 		$this->breadcrumbs[] = array(
