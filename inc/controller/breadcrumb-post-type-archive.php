@@ -19,7 +19,8 @@ class MS_Breadcrumb_Post_Type_Archive extends MS_Breadcrumb_Abstract {
 	 * @return void
 	 */
 	protected function set_items() {
-		$post_type = $this->get_post_type();
+		$post_id   = get_the_ID();
+		$post_type = $this->get_post_type( $post_id );
 
 		if ( $post_type && 'post' !== $post_type ) {
 			$label = $this->get_post_type_archive_label( $post_type );
