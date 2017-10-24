@@ -103,6 +103,9 @@ class MS_Breadcrumb_Settings {
 		$breadcrumb = new MS_Breadcrumb_Post_Type();
 		$this->_set_items( $breadcrumb->get() );
 
+		$breadcrumb = new MS_Breadcrumb_Blog();
+		$this->_set_items( $breadcrumb->get() );
+
 		if ( is_404() ) {
 			$breadcrumb = new MS_Breadcrumb_Not_Found();
 		} elseif ( is_search() ) {
