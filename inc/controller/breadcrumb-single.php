@@ -20,7 +20,7 @@ class MS_Breadcrumb_Single extends MS_Breadcrumb_Abstract {
 	 */
 	protected function set_items() {
 		$post_id   = get_the_ID();
-		$post_type = $this->get_post_type();
+		$post_type = $this->get_post_type( $post_id );
 		$taxonomy  = $this->get_post_taxonomy( $post_id );
 
 		if ( ! ( 'post' == $post_type ) ) {

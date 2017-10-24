@@ -110,12 +110,13 @@ abstract class MS_Breadcrumb_Abstract {
 	/**
 	 * Return the current post type.
 	 *
+	 * @param string $post_id post id.
 	 * @return string
 	 */
-	protected function get_post_type() {
+	protected function get_post_type( $post_id ) {
 		global $wp_query;
 
-		$post_type = get_post_type();
+		$post_type = get_post_type( $post_id );
 
 		if ( $post_type ) {
 			return $post_type;
