@@ -110,6 +110,7 @@ class MS_Breadcrumb_Settings {
 		} elseif ( is_page() && ! is_front_page() ) {
 			$breadcrumb = new MS_Breadcrumb_Page();
 		} elseif ( is_single() ) {
+			$breadcrumb = new MS_Breadcrumb_Single();
 		} elseif ( is_author() ) {
 		} elseif ( is_date() ) {
 		} elseif ( is_post_type_archive() ) {
