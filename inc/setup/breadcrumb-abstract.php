@@ -79,22 +79,6 @@ abstract class MS_Breadcrumb_Abstract {
 	}
 
 	/**
-	 * Set the custom post type links.
-	 *
-	 * @param string $post_id post id.
-	 */
-	protected function set_post_type_links( $post_id ) {
-		$post_type = $this->get_post_type( $post_id );
-
-		if ( $post_type && 'post' !== $post_type ) {
-			$label = $this->get_post_type_archive_label( $post_type );
-			$url   = $this->get_post_type_archive_link( $post_type );
-
-			$this->set( $label, $url );
-		}
-	}
-
-	/**
 	 * Return custom post type archive label.
 	 *
 	 * @param string $post_type post type name.
@@ -191,5 +175,26 @@ abstract class MS_Breadcrumb_Abstract {
 
 		$this->set_ancestors( $parent_id, $taxonomy );
 		$this->set( $term->name, get_term_link( $term ) );
+	}
+
+	/**
+	 * Return attachment parent id.
+	 *
+	 * @return null|string
+	 */
+	protected function get_attachment_parent_id() {
+		global $post;
+
+		$attachment_parent = $post->post_parent;
+
+		if ( $attachment_parent ) {
+			$parent_post = get_post( $attachment_parent );
+
+			if ( $parent_post ) {
+				$parent_id = $parent_post->ID;
+
+				return $parent_id;
+			}
+		}
 	}
 }
