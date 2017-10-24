@@ -52,7 +52,7 @@ class MS_Breadcrumb_Settings {
 	/**
 	 * Sets breadcrumbs items.
 	 *
-	 * @param array $items
+	 * @param array $items breadcrumb items
 	 * @return void
 	 */
 	protected function _set_items( $items ) {
@@ -64,8 +64,8 @@ class MS_Breadcrumb_Settings {
 	/**
 	 * Adds a item.
 	 *
-	 * @param string $title
-	 * @param string $link
+	 * @param string $title title
+	 * @param string $link url
 	 */
 	protected function _set( $title, $link = '' ) {
 		$this->breadcrumbs[] = array(
