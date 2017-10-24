@@ -79,7 +79,7 @@ abstract class MS_Breadcrumb_Abstract {
 	}
 
 	/**
-	 * Set the post type link.
+	 * Set the custom post type links.
 	 *
 	 * @param string $post_id post id.
 	 */
