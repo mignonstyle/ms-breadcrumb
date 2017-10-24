@@ -100,6 +100,7 @@ class MS_Breadcrumb_Settings {
 		$this->_set_items( $breadcrumb->get() );
 
 		if ( is_404() ) {
+			$breadcrumb = new MS_Breadcrumb_Not_Found();
 		} elseif ( is_search() ) {
 		} elseif ( is_attachment() ) {
 		} elseif ( is_category() || is_tag() || is_tax() ) {
