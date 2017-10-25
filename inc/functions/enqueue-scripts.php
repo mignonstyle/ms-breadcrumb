@@ -39,3 +39,4 @@ class MS_Breadcrumb_Enqueue_Scripts {
 		wp_enqueue_style( 'ms-breadcrumb', MS_BREADCRUMB_PLUGIN_URL . 'assets/css/style.css', array() );
 	}
 }
+new MS_Breadcrumb_Enqueue_Scripts();
