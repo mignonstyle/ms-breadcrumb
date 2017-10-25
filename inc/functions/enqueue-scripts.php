@@ -22,7 +22,7 @@ class MS_Breadcrumb_Enqueue_Scripts {
 	}
 
 	/**
-	 *	Setup localize script.
+	 * Setup localize script.
 	 *
 	 * @return void
 	 */
