@@ -28,6 +28,7 @@ class MS_Breadcrumb_Settings {
 		$includes = array(
 			'/setup',
 			'/controller',
+			'/functions',
 		);
 
 		foreach ( $includes as $include ) {
@@ -35,6 +36,8 @@ class MS_Breadcrumb_Settings {
 				require_once( $file );
 			}
 		}
+
+		new MS_Breadcrumb_Enqueue_Scripts();
 
 		$this->display_breadcrumb_items();
 
