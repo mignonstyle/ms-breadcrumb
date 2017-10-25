@@ -91,7 +91,7 @@ class MS_Breadcrumb_Date extends MS_Breadcrumb_Abstract {
 	protected function day_label() {
 		$day_label = sprintf(
 			/* translators: %s: String of date archive */
-			_x( '%s', 'day date format', 'ms-breadcrumb' ),
+			esc_html_x( '%s', 'day date format', 'ms-breadcrumb' ),
 			get_the_time( 'd' )
 		);
 
