@@ -1,1 +1,1 @@
-@charset 'utf-8';
+.c-breadcrumbs-ms{color:#666;font-size:.85rem}.c-breadcrumbs-ms ol{list-style:none;margin:0;padding:.5em 0}.c-breadcrumbs-ms li{display:inline}.c-breadcrumbs-ms li:after{content:'>';padding:0 3px}.c-breadcrumbs-ms li:last-child:after{content:''}.c-breadcrumbs-ms a{color:#666;text-decoration:none}.c-breadcrumbs-ms a:hover{color:#1e90ff}

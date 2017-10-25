@@ -2,7 +2,7 @@
 /**
  * Plugin Name: MS Breadcrumb
  * Plugin URI: https://github.com/mignonstyle/ms-breadcrumb
- * Description: MS Breadcrumb, display the breadcrumbs marked up structured at schema.org on the site. MS Breadcrumbは、Webサイトにschema.orgで構造化マークアップされたパンくずリストを表示します。
+ * Description: MS Breadcrumb, display the breadcrumbs marked up structured at schema.org on the site.
  * Text Domain: ms-breadcrumb
  * Domain Path: /languages
  * Author: Mignon Style
@@ -51,5 +51,12 @@ class MS_Breadcrumb {
 	 */
 	function load_textdomain() {
 		load_plugin_textdomain( 'ms-breadcrumb', false, basename( dirname( __FILE__ ) ) . '/languages' );
+	}
+
+	/**
+	 * Plugin description text.
+	 */
+	function plugin_description() {
+		$plugin_description = esc_html__( 'MS Breadcrumb, display the breadcrumbs marked up structured at schema.org on the site.', 'ms-breadcrumb' );
 	}
 }
