@@ -11,7 +11,7 @@
 /**
  * Class MS_Breadcrumb_Shortcodes.
  */
-class MS_Breadcrumb_Shortcodes  {
+class MS_Breadcrumb_Shortcodes {
 
 	/**
 	 * Constructor Define.
