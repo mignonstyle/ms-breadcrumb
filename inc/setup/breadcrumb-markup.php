@@ -39,7 +39,8 @@ class MS_Breadcrumb_Markup {
 			return;
 		}
 		?>
-		<div class="c-breadcrumbs-ms">
+		<nav class="c-breadcrumbs-ms" role="navigation" aria-label="<?php esc_attr_e( 'Breadcrumbs list', 'ms-breadcrumb' ); ?>">
+			<h2 class="screen-reader-text"><?php esc_html_e( 'You are here:', 'ms-breadcrumb' ); ?></h2>
 			<ol class="c-breadcrumb" itemscope itemtype="http://schema.org/BreadcrumbList">
 				<?php foreach ( $items as $key => $item ) : ?>
 					<li class="c-breadcrumbs__item" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
@@ -56,7 +57,7 @@ class MS_Breadcrumb_Markup {
 					</li>
 				<?php endforeach; ?>
 			</ol>
-		</div>
+		</nav>
 		<?php
 	}
 }
