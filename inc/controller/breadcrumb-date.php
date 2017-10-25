@@ -38,6 +38,7 @@ class MS_Breadcrumb_Date extends MS_Breadcrumb_Abstract {
 	 */
 	protected function year_label() {
 		$year_label = sprintf(
+			/* translators: %s: String of year archive */
 			_x( '%s', 'year date format', 'ms-breadcrumb' ),
 			get_the_time( 'Y' )
 		);
@@ -63,6 +64,7 @@ class MS_Breadcrumb_Date extends MS_Breadcrumb_Abstract {
 	 */
 	protected function month_label() {
 		$month_label = sprintf(
+			/* translators: %s: String of month archive */
 			_x( '%s', 'month date format', 'ms-breadcrumb' ),
 			get_the_time( 'F' )
 		);
@@ -88,6 +90,7 @@ class MS_Breadcrumb_Date extends MS_Breadcrumb_Abstract {
 	 */
 	protected function day_label() {
 		$day_label = sprintf(
+			/* translators: %s: String of date archive */
 			_x( '%s', 'day date format', 'ms-breadcrumb' ),
 			get_the_time( 'd' )
 		);
