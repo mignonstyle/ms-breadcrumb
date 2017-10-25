@@ -37,7 +37,10 @@ class MS_Breadcrumb_Date extends MS_Breadcrumb_Abstract {
 	 * @return string
 	 */
 	protected function year_label() {
-		$year_label = get_the_time( _x( 'Y', 'yearly archives date format', 'fleur' ) );
+		$year_label = sprintf(
+			_x( '%s', 'year date format', 'ms-breadcrumb' ),
+			get_the_time( 'Y' )
+		);
 
 		return $year_label;
 	}
@@ -59,7 +62,10 @@ class MS_Breadcrumb_Date extends MS_Breadcrumb_Abstract {
 	 * @return string
 	 */
 	protected function month_label() {
-		$month_label = get_the_time( _x( 'F', 'monthly archives date format', 'fleur' ) );
+		$month_label = sprintf(
+			_x( '%s', 'month date format', 'ms-breadcrumb' ),
+			get_the_time( 'F' )
+		);
 
 		return $month_label;
 	}
@@ -81,7 +87,10 @@ class MS_Breadcrumb_Date extends MS_Breadcrumb_Abstract {
 	 * @return string
 	 */
 	protected function day_label() {
-		$day_label = get_the_time( _x( 'd', 'daily archives date format', 'fleur' ) );
+		$day_label = sprintf(
+			_x( '%s', 'day date format', 'ms-breadcrumb' ),
+			get_the_time( 'd' )
+		);
 
 		return $day_label;
 	}
