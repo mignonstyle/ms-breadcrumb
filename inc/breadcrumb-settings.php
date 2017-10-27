@@ -29,6 +29,7 @@ class MS_Breadcrumb_Settings {
 			'/setup',
 			'/controller',
 			'/functions',
+			'/options',
 		);
 
 		foreach ( $includes as $include ) {
