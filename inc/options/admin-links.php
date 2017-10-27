@@ -24,7 +24,7 @@ class MS_Breadcrumb_Action_Links {
 	 * Return the URL of the settings page for the plugin.
 	 */
 	function admin_url() {
-		return admin_url( 'options-general.php?page=ms-breadcrumb' );
+		return admin_url( 'options-general.php?page=' . MS_Breadcrumb_Admin_Options::OPTIONS_PAGE_SLUG );
 	}
 
 	/**
