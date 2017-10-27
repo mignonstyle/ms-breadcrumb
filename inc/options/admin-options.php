@@ -26,7 +26,7 @@ class MS_Breadcrumb_Admin_Options {
 	}
 
 	/**
-	 * create custom plugin settings menu.
+	 * Create custom plugin settings menu.
 	 */
 	public function add_option_menu() {
 		// This page will be under "Settings".
@@ -53,7 +53,7 @@ class MS_Breadcrumb_Admin_Options {
 	 * Options page callback. option page markup.
 	 */
 	public function create_option_page() {
-		if ( ! current_user_can( 'manage_options' ) )  {
+		if ( ! current_user_can( 'manage_options' ) ) {
 			wp_die( __( 'You do not have sufficient permissions to access this page.', 'ms-breadcrumb' ) );
 		}
 		?>
