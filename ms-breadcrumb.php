@@ -21,6 +21,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
+define( 'MS_BREADCRUMB_PLUGIN_DOMAIN', plugin_basename( __FILE__ ) );
 define( 'MS_BREADCRUMB_PLUGIN_URL', plugin_dir_url( __FILE__ ) );
 
 new MS_Breadcrumb();
