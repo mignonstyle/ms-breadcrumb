@@ -35,7 +35,8 @@ class MS_Breadcrumb_Action_Links {
 	 * @return array
 	 */
 	function add_plugin_action_links( $links, $file ) {
-		if( MS_BREADCRUMB_PLUGIN_DOMAIN == $file ) {
+
+		if ( MS_BREADCRUMB_PLUGIN_DOMAIN == $file ) {
 			$settings_link = sprintf(
 				'<a href="%1$s">%2$s</a>',
 				$this->admin_url(),
