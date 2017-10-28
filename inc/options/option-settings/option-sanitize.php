@@ -25,7 +25,7 @@ class MS_Breadcrumb_Option_Sanitize {
 	 * @param array $input Contains all settings fields as array keys.
 	 */
 	public function sanitize_callback( $input ) {
-		//$sections = MS_Breadcrumb_Options_Default::default_options();
+		$sections = MS_Breadcrumb_Options_Default::default_options();
 
 		$output = MS_Breadcrumb_Admin_Options::get_option();
 
