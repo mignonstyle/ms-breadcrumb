@@ -21,12 +21,14 @@ class MS_Breadcrumb_Callback_Sections {
 
 	/**
 	 * Sets the section's callback.
+	 *
+	 * @param array $arg section contents.
 	 */
 	public function callback_section_content( $arg ) {
 		$default  = new MS_Breadcrumb_Options_Default();
 		$sections = $default->default_options();
 
-		foreach( $sections as $section_key => $section ) {
+		foreach ( $sections as $section_key => $section ) {
 
 			if ( isset( $arg['id'] ) && $section_key == $arg['id'] ) {
 				$class_name = MS_Breadcrumb_Options_Default::OPTION_KEY . '-' . $section_key . ' ' . $section_key;
