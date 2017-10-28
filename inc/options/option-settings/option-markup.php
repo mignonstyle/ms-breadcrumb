@@ -26,11 +26,9 @@ class MS_Breadcrumb_Option_Markup {
 		if ( ! current_user_can( 'manage_options' ) ) {
 			wp_die( __( 'You do not have sufficient permissions to access this page.', 'ms-breadcrumb' ) );
 		}
-
-		$default = new MS_Breadcrumb_Options_Default();
 		?>
 		<div id="c-ms-breadcrumb" class="wrap">
-			<h2><?php echo esc_html( $default->option_title() ); ?></h2>
+			<h2><?php echo esc_html( MS_Breadcrumb_Options_Default::option_title() ); ?></h2>
 
 			<form method="post" action="options.php">
 				<?php

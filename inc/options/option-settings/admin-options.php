@@ -26,14 +26,13 @@ class MS_Breadcrumb_Admin_Options {
 	public function add_settings_menu() {
 		$markup  = new MS_Breadcrumb_Option_Markup();
 		$scripts = new MS_Breadcrumb_Admin_Scripts();
-		$default = new MS_Breadcrumb_Options_Default();
 
 		// This page will be under "Settings".
 		$page_hook = add_options_page(
-			$default->option_title(),
-			$default->option_title(),
+			MS_Breadcrumb_Options_Default::option_title(),
+			MS_Breadcrumb_Options_Default::option_title(),
 			'manage_options',
-			$default::OPTIONS_PAGE_SLUG,
+			MS_Breadcrumb_Options_Default::OPTIONS_PAGE_SLUG,
 			array( $markup, 'create_option_page' )
 		);
 

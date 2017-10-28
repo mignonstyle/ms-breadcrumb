@@ -25,8 +25,7 @@ class MS_Breadcrumb_Callback_Sections {
 	 * @param array $arg section contents.
 	 */
 	public function callback_section_content( $arg ) {
-		$default  = new MS_Breadcrumb_Options_Default();
-		$sections = $default->default_options();
+		$sections = MS_Breadcrumb_Options_Default::default_options();
 
 		foreach ( $sections as $section_key => $section ) {
 

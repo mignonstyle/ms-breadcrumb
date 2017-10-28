@@ -40,7 +40,7 @@ class MS_Breadcrumb_Action_Links {
 			$settings_link = sprintf(
 				'<a href="%1$s">%2$s</a>',
 				$this->admin_url(),
-				__( 'Settings' , 'ms-breadcrumb' )
+				__( 'Settings', 'ms-breadcrumb' )
 			);
 			array_unshift( $links, $settings_link );
 		}
