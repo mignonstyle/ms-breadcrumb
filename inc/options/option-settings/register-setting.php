@@ -38,8 +38,7 @@ class MS_Breadcrumb_Register_Settings {
 	 * Add section and fields of settings.
 	 */
 	public function register_settings_init() {
-		$default  = new MS_Breadcrumb_Options_Default();
-		$sections = $default->default_options();
+		$sections = MS_Breadcrumb_Options_Default::default_options();
 
 		$callback_section = new MS_Breadcrumb_Callback_Sections();
 		$callback_field   = new MS_Breadcrumb_Callback_Fields();
