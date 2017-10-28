@@ -29,7 +29,6 @@ class MS_Breadcrumb_Settings {
 			'/setup',
 			'/controller',
 			'/functions',
-			'/options',
 		);
 
 		foreach ( $includes as $include ) {
@@ -39,6 +38,10 @@ class MS_Breadcrumb_Settings {
 		}
 
 		$this->display_breadcrumb_items();
+
+		// Add option page.
+		require_once( plugin_dir_path( __FILE__ ) . 'options/options-default.php' );
+		new MS_Breadcrumb_Options_Default();
 	}
 
 	/**
