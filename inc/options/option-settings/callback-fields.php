@@ -13,8 +13,6 @@
  */
 class MS_Breadcrumb_Callback_Fields {
 
-	private $options;
-
 	/**
 	 * Constructor Define.
 	 */
@@ -33,6 +31,11 @@ class MS_Breadcrumb_Callback_Fields {
 		$desc  = isset( $field['desc'] ) ? $field['desc'] : '';
 		$type  = isset( $field['type'] ) ? $field['type'] : '';
 
+		// 既にデータが入力されていたら表示する
+		$options   = MS_Breadcrumb_Admin_Options::get_option();
+		$value     = isset( $options[$field['name']]) ? $options[$field['name']] : '';
+		$fieldname = MS_Breadcrumb_Options_Default::OPTION_KEY . '[' . $field['name'] . ']';
+
 		switch( $type ) {
 			case 'url':
 				break;
@@ -43,13 +46,7 @@ class MS_Breadcrumb_Callback_Fields {
 			case 'hidden':
 				break;
 			case 'text':
-
-				// 既にデータが入力されていたら表示する
-				$this->options = MS_Breadcrumb_Admin_Options::get_option();
-
-				$text = isset( $this->options[$field['name']]) ? $this->options[$field['name']] : '';
-				echo '<input type="text" name="' . MS_Breadcrumb_Options_Default::OPTION_KEY . '[' . $field['name'] . ']" value="' . esc_attr( $text ) . '" />';
-
+				new MS_Breadcrumb_Field_Text( $fieldname, $value );
 				break;
 
 			case 'textarea':
