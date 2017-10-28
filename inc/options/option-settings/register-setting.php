@@ -44,7 +44,7 @@ class MS_Breadcrumb_Register_Settings {
 		$callback_section = new MS_Breadcrumb_Callback_Sections();
 		$callback_field   = new MS_Breadcrumb_Callback_Fields();
 
-		foreach ( $sections as $section_key=>$section ) {
+		foreach ( $sections as $section_key => $section ) {
 			// Add the sections.
 			add_settings_section(
 				$section_key,
@@ -56,7 +56,7 @@ class MS_Breadcrumb_Register_Settings {
 			if ( isset( $section['fields'] ) ) {
 
 				// Add the fields.
-				foreach ( $section['fields'] as $field_key=>$field ) {
+				foreach ( $section['fields'] as $field_key => $field ) {
 					$label_for = isset( $field['args']['label_for'] ) ? $field['args']['label_for'] : '';
 					$desc      = isset( $field['args']['desc'] ) ? $field['args']['desc'] : '';
 					$type      = isset( $field['args']['type'] ) ? $field['args']['type'] : '';
