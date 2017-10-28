@@ -21,6 +21,8 @@ class MS_Breadcrumb_Callback_Fields {
 
 	/**
 	 * Sets the field's callback.
+	 *
+	 * @param array $field Option field content.
 	 */
 	public function callback_field_content( $field ) {
 		if ( empty( $field ) && isset( $field['name'] ) ) {
@@ -31,12 +33,11 @@ class MS_Breadcrumb_Callback_Fields {
 		$desc  = isset( $field['desc'] ) ? $field['desc'] : '';
 		$type  = isset( $field['type'] ) ? $field['type'] : '';
 
-		// 既にデータが入力されていたら表示する
 		$options   = MS_Breadcrumb_Admin_Options::get_option();
-		$value     = isset( $options[$field['name']]) ? $options[$field['name']] : '';
+		$value     = isset( $options[ $field['name'] ] ) ? $options[ $field['name'] ] : '';
 		$fieldname = MS_Breadcrumb_Options_Default::OPTION_KEY . '[' . $field['name'] . ']';
 
-		switch( $type ) {
+		switch ( $type ) {
 			case 'url':
 				break;
 			case 'email':

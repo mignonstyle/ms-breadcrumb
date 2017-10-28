@@ -29,16 +29,16 @@ class MS_Breadcrumb_Option_Sanitize {
 
 		$output = MS_Breadcrumb_Admin_Options::get_option();
 
-		// 作業途中
-		// デフォルトのtypeによって検証させる
+		// 作業途中.
+		// デフォルトのtypeによって検証させる.
 
-		foreach( $sections as $section_key => $section ) {
+		foreach ( $sections as $section_key => $section ) {
 
 			if ( isset( $section['fields'] ) ) {
-				foreach( $section['fields'] as $field_key => $field ) {
+				foreach ( $section['fields'] as $field_key => $field ) {
 
-					if( isset( $input[$field_key] ) ) {
-						$input[$field_key] = sanitize_text_field( $input[$field_key] );
+					if ( isset( $input[ $field_key ] ) ) {
+						$input[ $field_key ] = sanitize_text_field( $input[ $field_key ] );
 					}
 				}
 			}
