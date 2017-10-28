@@ -31,7 +31,6 @@ class MS_Breadcrumb_Option_Sanitize {
 
 		// 作業途中.
 		// デフォルトのtypeによって検証させる.
-
 		foreach ( $sections as $section_key => $section ) {
 
 			if ( isset( $section['fields'] ) ) {

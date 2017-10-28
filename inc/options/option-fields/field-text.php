@@ -15,6 +15,8 @@ class MS_Breadcrumb_Field_Text {
 
 	/**
 	 * Constructor.
+	 *
+	 *
 	 */
 	private $fieldname;
 	private $value;
@@ -32,6 +34,9 @@ class MS_Breadcrumb_Field_Text {
 
 	/**
 	 * Sets the field's callback.
+	 *
+	 * @param string $fieldname Field id and name.
+	 * @param string $value     Field value.
 	 */
 	public function set_field( $fieldname, $value ) {
 		if ( empty( $fieldname ) && empty( $value ) ) {
