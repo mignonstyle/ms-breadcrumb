@@ -40,7 +40,7 @@ class MS_Breadcrumb_Options_Default {
 	 * Set the option page title.
 	 */
 	public static function option_title() {
-		$opton_title = __( 'MS Breadcrumbぶー', 'ms-breadcrumb' );
+		$opton_title = __( 'MS Breadcrumb', 'ms-breadcrumb' );
 
 		return $opton_title;
 	}
