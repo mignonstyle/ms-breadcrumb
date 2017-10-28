@@ -30,11 +30,12 @@ class MS_Breadcrumb_Option_Markup {
 		<div id="c-ms-breadcrumb" class="wrap">
 			<h2><?php echo esc_html( MS_Breadcrumb_Options_Default::option_title() ); ?></h2>
 
-			<form method="post" action="options.php">
+			<form method="post" action="options.php" enctype="multipart/form-data">
 				<?php
 					settings_fields( MS_Breadcrumb_Options_Default::OPTION_GROUP );
 					do_settings_sections( MS_Breadcrumb_Options_Default::OPTIONS_PAGE_SLUG );
 					submit_button();
+					submit_button( esc_attr__( 'Reset Defaults', 'ms-breadcrumb' ), 'secondary', 'reset' );
 				?>
 			</form>
 		</div>
