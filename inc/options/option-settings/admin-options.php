@@ -43,7 +43,7 @@ class MS_Breadcrumb_Admin_Options {
 	/**
 	 * Get the value options.
 	 */
-	public function get_option() {
+	public static function get_option() {
 		return get_option( MS_Breadcrumb_Options_Default::OPTION_KEY );
 	}
 }
