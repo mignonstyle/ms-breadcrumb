@@ -59,24 +59,24 @@ class MS_Breadcrumb_Options_Default {
 						'args'  => array(
 							'label_for' => 'fields-label1',
 							'desc'      => __( 'ふぃーるど1だよ', 'ms-breadcrumb' ),
-							'type'      => 'text'
-						)
+							'type'      => 'text',
+						),
 					),
 					'field_2' => array(
 						'title' => __( 'フィールド 2', 'ms-breadcrumb' ),
 						'args'  => array(
 							'label_for' => 'fields-label2',
 							'desc'      => __( 'ふぃーるど2だよ', 'ms-breadcrumb' ),
-							'type'      => 'text'
-						)
+							'type'      => 'text',
+						),
 					),
 					'field_3' => array(
 						'title' => __( 'フィールド 3', 'ms-breadcrumb' ),
 						'args'  => array(
 							'label_for' => 'fields-label3',
 							'desc'      => __( 'ふぃーるど3だよ', 'ms-breadcrumb' ),
-							'type'      => 'text'
-						)
+							'type'      => 'text',
+						),
 					),
 				),
 			),
