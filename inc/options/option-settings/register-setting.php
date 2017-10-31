@@ -56,9 +56,6 @@ class MS_Breadcrumb_Register_Settings {
 
 				// Add the fields.
 				foreach ( $section['fields'] as $field_key => $field ) {
-					$label_for = isset( $field['args']['label_for'] ) ? $field['args']['label_for'] : '';
-					$desc      = isset( $field['args']['desc'] ) ? $field['args']['desc'] : '';
-					$type      = isset( $field['args']['type'] ) ? $field['args']['type'] : '';
 
 					add_settings_field(
 						$field_key,
@@ -67,10 +64,11 @@ class MS_Breadcrumb_Register_Settings {
 						MS_Breadcrumb_Options_Default::OPTIONS_PAGE_SLUG,
 						$section_key,
 						array(
-							'label_for' => $label_for,
-							'type'      => $type,
-							'desc'      => $desc,
-							'name'      => $field_key,
+							'fieldname' => $field_key,
+							'type'      => $field['args']['type'],
+							'label'     => $field['args']['label'],
+							'desc'      => $field['args']['desc'],
+							'class'     => $field['args']['class'],
 						)
 					);
 				}
