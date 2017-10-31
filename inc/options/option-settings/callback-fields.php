@@ -34,20 +34,22 @@ class MS_Breadcrumb_Callback_Fields {
 		$type  = isset( $field['type'] ) ? $field['type'] : '';
 
 		$options   = MS_Breadcrumb_Admin_Options::get_option();
-		$value     = isset( $options[ $field['name'] ] ) ? $options[ $field['name'] ] : '';
 		$fieldname = MS_Breadcrumb_Options_Default::OPTION_KEY . '[' . $field['name'] . ']';
+		$value     = isset( $options[ $field['name'] ] ) ? $options[ $field['name'] ] : '';
+
+		$fields = array(
+			'type'      => $type,
+			'fieldname' => $fieldname,
+			'value'     => $value,
+		);
 
 		switch ( $type ) {
 			case 'url':
-				break;
 			case 'email':
-				break;
 			case 'number':
-				break;
 			case 'hidden':
-				break;
 			case 'text':
-				new MS_Breadcrumb_Field_Text( $fieldname, $value );
+				new MS_Breadcrumb_Field_Text( $fields );
 				break;
 
 			case 'textarea':

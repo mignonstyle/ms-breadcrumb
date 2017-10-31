@@ -33,6 +33,8 @@ class MS_Breadcrumb_Options_Default {
 			foreach ( glob( __DIR__ . $include . '/*.php' ) as $file ) {
 				require_once( $file );
 			}
+
+			require_once( plugin_dir_path( __FILE__ ) . 'fields-abstract.php' );
 		}
 	}
 
@@ -59,7 +61,7 @@ class MS_Breadcrumb_Options_Default {
 						'args'  => array(
 							'label_for' => 'fields-label1',
 							'desc'      => __( 'ふぃーるど1だよ', 'ms-breadcrumb' ),
-							'type'      => 'text',
+							'type'      => 'url',
 						),
 					),
 					'field_2' => array(
@@ -67,7 +69,7 @@ class MS_Breadcrumb_Options_Default {
 						'args'  => array(
 							'label_for' => 'fields-label2',
 							'desc'      => __( 'ふぃーるど2だよ', 'ms-breadcrumb' ),
-							'type'      => 'number',
+							'type'      => 'email',
 						),
 					),
 					'field_3' => array(
@@ -75,6 +77,22 @@ class MS_Breadcrumb_Options_Default {
 						'args'  => array(
 							'label_for' => 'fields-label3',
 							'desc'      => __( 'ふぃーるど3だよ', 'ms-breadcrumb' ),
+							'type'      => 'number',
+						),
+					),
+					'field_4' => array(
+						'title' => __( 'フィールド 4', 'ms-breadcrumb' ),
+						'args'  => array(
+							'label_for' => 'fields-label4',
+							'desc'      => __( 'ふぃーるど4だよ', 'ms-breadcrumb' ),
+							'type'      => 'hidden',
+						),
+					),
+					'field_5' => array(
+						'title' => __( 'フィールド 5', 'ms-breadcrumb' ),
+						'args'  => array(
+							'label_for' => 'fields-label5',
+							'desc'      => __( 'ふぃーるど5だよ', 'ms-breadcrumb' ),
 							'type'      => 'text',
 						),
 					),

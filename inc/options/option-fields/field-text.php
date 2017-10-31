@@ -11,40 +11,16 @@
 /**
  * Class MS_Breadcrumb_Field_Text.
  */
-class MS_Breadcrumb_Field_Text {
+class MS_Breadcrumb_Field_Text extends MS_Breadcrumb_fields_Abstract {
 
 	/**
-	 * Constructor Define.
-	 *
-	 * @param string $fieldname Field id and name.
-	 * @param string $value     Field value.
+	 * Sets option field items.
 	 */
-	public function __construct( $fieldname, $value ) {
-		$this->set_field( $fieldname, $value );
-		$this->field_markup();
-	}
+	protected function set_field() {
+		$fields = $this->get();
 
-	/**
-	 * Sets the field's callback.
-	 *
-	 * @param string $fieldname Field id and name.
-	 * @param string $value     Field value.
-	 */
-	public function set_field( $fieldname, $value ) {
-		if ( empty( $fieldname ) && empty( $value ) ) {
-			return;
-		}
-
-		$this->fieldname = $fieldname;
-		$this->value     = $value;
-	}
-
-	/**
-	 * Sets the field's callback.
-	 */
-	private function field_markup() {
 		?>
-		<input type="text" id="<?php echo esc_attr( $this->fieldname ); ?>" name="<?php echo esc_attr( $this->fieldname ); ?>" value="<?php echo esc_attr( $this->value ); ?>" />
+		<input type="<?php echo esc_attr( $fields['type'] ); ?>" id="<?php echo esc_attr( $fields['fieldname'] ); ?>" name="<?php echo esc_attr( $fields['fieldname'] ); ?>" value="<?php echo esc_attr( $fields['value'] ); ?>" />
 		<?php
 	}
 }
