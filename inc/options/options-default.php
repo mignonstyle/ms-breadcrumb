@@ -59,15 +59,15 @@ class MS_Breadcrumb_Options_Default {
 					'field_1' => array(
 						'title' => __( 'フィールド 1', 'ms-breadcrumb' ),
 						'args'  => array(
-							'label_for' => 'fields-label1',
-							'desc'      => __( 'ふぃーるど1だよ', 'ms-breadcrumb' ),
+							'label_for' => __( 'URL: ', 'ms-breadcrumb' ),
+							//'desc'      => __( 'ふぃーるど1だよ', 'ms-breadcrumb' ),
 							'type'      => 'url',
 						),
 					),
 					'field_2' => array(
 						'title' => __( 'フィールド 2', 'ms-breadcrumb' ),
 						'args'  => array(
-							'label_for' => 'fields-label2',
+							'label_for' => __( 'E-mail: ', 'ms-breadcrumb' ),
 							'desc'      => __( 'ふぃーるど2だよ', 'ms-breadcrumb' ),
 							'type'      => 'email',
 						),
@@ -75,7 +75,7 @@ class MS_Breadcrumb_Options_Default {
 					'field_3' => array(
 						'title' => __( 'フィールド 3', 'ms-breadcrumb' ),
 						'args'  => array(
-							'label_for' => 'fields-label3',
+							'label_for' => __( '', 'ms-breadcrumb' ),
 							'desc'      => __( 'ふぃーるど3だよ', 'ms-breadcrumb' ),
 							'type'      => 'number',
 						),
@@ -83,7 +83,7 @@ class MS_Breadcrumb_Options_Default {
 					'field_4' => array(
 						'title' => __( 'フィールド 4', 'ms-breadcrumb' ),
 						'args'  => array(
-							'label_for' => 'fields-label4',
+							'label_for' => __( '', 'ms-breadcrumb' ),
 							'desc'      => __( 'ふぃーるど4だよ', 'ms-breadcrumb' ),
 							'type'      => 'hidden',
 						),
@@ -91,7 +91,7 @@ class MS_Breadcrumb_Options_Default {
 					'field_5' => array(
 						'title' => __( 'フィールド 5', 'ms-breadcrumb' ),
 						'args'  => array(
-							'label_for' => 'fields-label5',
+							'label_for' => __( '', 'ms-breadcrumb' ),
 							'desc'      => __( 'ふぃーるど5だよ', 'ms-breadcrumb' ),
 							'type'      => 'text',
 						),

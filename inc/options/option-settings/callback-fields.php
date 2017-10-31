@@ -29,18 +29,18 @@ class MS_Breadcrumb_Callback_Fields {
 			return;
 		}
 
-		$label = isset( $field['label_for'] ) ? $field['label_for'] : '';
-		$desc  = isset( $field['desc'] ) ? $field['desc'] : '';
-		$type  = isset( $field['type'] ) ? $field['type'] : '';
-
 		$options   = MS_Breadcrumb_Admin_Options::get_option();
+
+		$type      = isset( $field['type'] ) ? $field['type'] : '';
 		$fieldname = MS_Breadcrumb_Options_Default::OPTION_KEY . '[' . $field['name'] . ']';
 		$value     = isset( $options[ $field['name'] ] ) ? $options[ $field['name'] ] : '';
+		$label     = isset( $field['label_for'] ) ? $field['label_for'] : '';
 
 		$fields = array(
 			'type'      => $type,
 			'fieldname' => $fieldname,
 			'value'     => $value,
+			'label'     => $label,
 		);
 
 		switch ( $type ) {

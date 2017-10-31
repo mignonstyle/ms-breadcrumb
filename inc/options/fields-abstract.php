@@ -41,6 +41,10 @@ abstract class MS_Breadcrumb_Fields_Abstract {
 	 * @param string $fields Field items.
 	 */
 	protected function set( $fields ) {
+		if ( empty( $fields['fieldname'] ) ) {
+			return;
+		}
+
 		$this->fields = $fields;
 	}
 

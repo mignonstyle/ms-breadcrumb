@@ -19,7 +19,10 @@ class MS_Breadcrumb_Field_Text extends MS_Breadcrumb_fields_Abstract {
 	protected function set_field() {
 		$fields = $this->get();
 
-		?>
+		if ( isset( $fields['label'] ) && $fields['label'] ) :?>
+			<label for="<?php echo esc_attr( $fields['fieldname'] ); ?>"><?php echo esc_attr( $fields['label'] ); ?></label>
+		<?php endif; ?>
+
 		<input type="<?php echo esc_attr( $fields['type'] ); ?>" id="<?php echo esc_attr( $fields['fieldname'] ); ?>" name="<?php echo esc_attr( $fields['fieldname'] ); ?>" value="<?php echo esc_attr( $fields['value'] ); ?>" />
 		<?php
 	}
