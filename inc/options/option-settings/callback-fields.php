@@ -29,18 +29,22 @@ class MS_Breadcrumb_Callback_Fields {
 			return;
 		}
 
-		$label = isset( $field['label_for'] ) ? $field['label_for'] : '';
-		$desc  = isset( $field['desc'] ) ? $field['desc'] : '';
-		$type  = isset( $field['type'] ) ? $field['type'] : '';
-
 		$options   = MS_Breadcrumb_Admin_Options::get_option();
-		$fieldname = MS_Breadcrumb_Options_Default::OPTION_KEY . '[' . $field['name'] . ']';
-		$value     = isset( $options[ $field['name'] ] ) ? $options[ $field['name'] ] : '';
+
+		$fieldname = MS_Breadcrumb_Options_Default::OPTION_KEY . '[' . $field['fieldname'] . ']';
+		$type      = isset( $field['type'] ) ? $field['type'] : '';
+		$value     = isset( $options[ $field['fieldname'] ] ) ? $options[ $field['fieldname'] ] : '';
+		$label     = isset( $field['label_for'] ) ? $field['label_for'] : '';
+		$desc      = isset( $field['desc'] ) ? $field['desc'] : '';
+		$class     = isset( $field['class'] ) ? $field['class'] : '';
 
 		$fields = array(
-			'type'      => $type,
 			'fieldname' => $fieldname,
+			'type'      => $type,
 			'value'     => $value,
+			'label'     => $label,
+			'desc'      => $desc,
+			'class'     => $class,
 		);
 
 		switch ( $type ) {
@@ -53,7 +57,9 @@ class MS_Breadcrumb_Callback_Fields {
 				break;
 
 			case 'textarea':
+				new MS_Breadcrumb_Field_Textarea( $fields );
 				break;
+
 			case 'checkbox':
 				break;
 			case 'radio':
@@ -68,6 +74,13 @@ class MS_Breadcrumb_Callback_Fields {
 				break;
 			default:
 				break;
+		}
+
+		if ( isset( $fields['desc'] ) && $fields['desc'] ) {
+			printf(
+				'<p>%s</p>',
+				esc_html( $fields['desc'] )
+			);
 		}
 	}
 }
