@@ -11,7 +11,7 @@
 /**
  * Abstract class MS_Breadcrumb_fields_Abstract.
  */
-abstract class MS_Breadcrumb_fields_Abstract {
+abstract class MS_Breadcrumb_Fields_Abstract {
 
 	/**
 	 * Option fields name and value.
@@ -23,8 +23,7 @@ abstract class MS_Breadcrumb_fields_Abstract {
 	/**
 	 * Constructor Define.
 	 *
-	 * @param string $fieldname Field id and name.
-	 * @param string $value     Field value.
+	 * @param string $fields Field items.
 	 */
 	public function __construct( $fields ) {
 		$this->set( $fields );
@@ -39,8 +38,7 @@ abstract class MS_Breadcrumb_fields_Abstract {
 	/**
 	 * Add field name and value.
 	 *
-	 * @param string $fieldname Field id and name.
-	 * @param string $value     Field value.
+	 * @param string $fields Field items.
 	 */
 	protected function set( $fields ) {
 		$this->fields = $fields;

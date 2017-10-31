@@ -96,23 +96,6 @@ class MS_Breadcrumb_Options_Default {
 							'type'      => 'text',
 						),
 					),
-					/*
-					'field_6' => array(
-						'title' => __( 'フィールド 6', 'ms-breadcrumb' ),
-						'args'  => array(
-							'label_for' => 'fields-label6',
-							'desc'      => __( 'ふぃーるど6だよ', 'ms-breadcrumb' ),
-							'type'      => 'text',
-						),
-					),
-					*/
-
-
-
-
-
-
-
 				),
 			),
 			'section_2' => array(
