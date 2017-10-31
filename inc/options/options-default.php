@@ -57,7 +57,7 @@ class MS_Breadcrumb_Options_Default {
 				'desc'   => __( 'セクション 1の説明です', 'ms-breadcrumb' ),
 				'fields' => array(
 					'field_1' => array(
-						'title' => __( 'フィールド 1', 'ms-breadcrumb' ),
+						'title' => __( 'url', 'ms-breadcrumb' ),
 						'args'  => array(
 							'label' => __( 'URL: ', 'ms-breadcrumb' ),
 							'desc'  => __( 'ふぃーるど1だよ', 'ms-breadcrumb' ),
@@ -66,7 +66,7 @@ class MS_Breadcrumb_Options_Default {
 						),
 					),
 					'field_2' => array(
-						'title' => __( 'フィールド 2', 'ms-breadcrumb' ),
+						'title' => __( 'email', 'ms-breadcrumb' ),
 						'args'  => array(
 							'label' => __( 'E-mail: ', 'ms-breadcrumb' ),
 							'desc'  => __( 'ふぃーるど2だよ', 'ms-breadcrumb' ),
@@ -75,16 +75,16 @@ class MS_Breadcrumb_Options_Default {
 						),
 					),
 					'field_3' => array(
-						'title' => __( 'フィールド 3', 'ms-breadcrumb' ),
+						'title' => __( 'number', 'ms-breadcrumb' ),
 						'args'  => array(
-							'label' => __( '', 'ms-breadcrumb' ),
+							'label' => __( 'ナンバー', 'ms-breadcrumb' ),
 							'desc'  => __( 'ふぃーるど3だよ', 'ms-breadcrumb' ),
 							'type'  => 'number',
 							'class' => 'small-text',
 						),
 					),
 					'field_4' => array(
-						'title' => __( 'フィールド 4', 'ms-breadcrumb' ),
+						'title' => __( 'hidden', 'ms-breadcrumb' ),
 						'args'  => array(
 							'label' => __( '', 'ms-breadcrumb' ),
 							'desc'  => __( 'ふぃーるど4だよ', 'ms-breadcrumb' ),
@@ -93,7 +93,7 @@ class MS_Breadcrumb_Options_Default {
 						),
 					),
 					'field_5' => array(
-						'title' => __( 'フィールド 5', 'ms-breadcrumb' ),
+						'title' => __( 'text', 'ms-breadcrumb' ),
 						'args'  => array(
 							'label' => __( '', 'ms-breadcrumb' ),
 							'desc'  => __( 'ふぃーるど5だよ', 'ms-breadcrumb' ),
@@ -106,6 +106,17 @@ class MS_Breadcrumb_Options_Default {
 			'section_2' => array(
 				'title' => __( 'セクション 2', 'ms-breadcrumb' ),
 				'desc'  => __( '', 'ms-breadcrumb' ),
+				'fields' => array(
+					'textarea_1' => array(
+						'title' => __( 'textarea', 'ms-breadcrumb' ),
+						'args'  => array(
+							'label' => __( '', 'ms-breadcrumb' ),
+							'desc'  => __( 'テキストを入力してください。', 'ms-breadcrumb' ),
+							'type'  => 'textarea',
+							'class' => '',
+						),
+					),
+				),
 			),
 			'section_3' => array(
 				'title' => __( 'セクション 3', 'ms-breadcrumb' ),
