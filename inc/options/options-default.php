@@ -60,7 +60,7 @@ class MS_Breadcrumb_Options_Default {
 						'title' => __( 'フィールド 1', 'ms-breadcrumb' ),
 						'args'  => array(
 							'label_for' => __( 'URL: ', 'ms-breadcrumb' ),
-							//'desc'      => __( 'ふぃーるど1だよ', 'ms-breadcrumb' ),
+							'desc'      => __( 'ふぃーるど1だよ', 'ms-breadcrumb' ),
 							'type'      => 'url',
 						),
 					),

@@ -35,12 +35,14 @@ class MS_Breadcrumb_Callback_Fields {
 		$fieldname = MS_Breadcrumb_Options_Default::OPTION_KEY . '[' . $field['name'] . ']';
 		$value     = isset( $options[ $field['name'] ] ) ? $options[ $field['name'] ] : '';
 		$label     = isset( $field['label_for'] ) ? $field['label_for'] : '';
+		$desc      = isset( $field['desc'] ) ? $field['desc'] : '';
 
 		$fields = array(
 			'type'      => $type,
 			'fieldname' => $fieldname,
 			'value'     => $value,
 			'label'     => $label,
+			'desc'      => $desc,
 		);
 
 		switch ( $type ) {
