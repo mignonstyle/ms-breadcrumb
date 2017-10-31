@@ -17,17 +17,32 @@ class MS_Breadcrumb_Field_Text extends MS_Breadcrumb_fields_Abstract {
 	 * Sets option field items.
 	 */
 	protected function set_field() {
+		/*
 		$fields = $this->get();
+		$class  = empty( $fields['class'] ) ? 'regular-text' : $fields['class'];
 
-		if ( isset( $fields['label'] ) && $fields['label'] ) : ?>
-			<label for="<?php echo esc_attr( $fields['fieldname'] ); ?>"><?php echo esc_attr( $fields['label'] ); ?></label>
-		<?php endif; ?>
+		if ( isset( $fields['label'] ) && $fields['label'] ) {
+			printf(
+				'<label for="%1$s">%2$s</label>',
+				esc_attr( $fields['fieldname'] ),
+				esc_attr( $fields['label'] )
+			);
+		}
 
-		<input type="<?php echo esc_attr( $fields['type'] ); ?>" id="<?php echo esc_attr( $fields['fieldname'] ); ?>" name="<?php echo esc_attr( $fields['fieldname'] ); ?>" value="<?php echo esc_attr( $fields['value'] ); ?>" />
+		printf(
+			'<input type="%1$s" id="%2$s" name="%2$s" value="%3$s" class="%4$s" />',
+			esc_attr( $fields['type'] ),
+			esc_attr( $fields['fieldname'] ),
+			esc_attr( $fields['value'] ),
+			esc_attr( $class )
+		);
 
-		<?php if ( isset( $fields['desc'] ) && $fields['desc'] ) : ?>
-			<p><?php echo esc_html( $fields['desc'] ); ?></p>
-		<?php endif; ?>
-		<?php
+		if ( isset( $fields['desc'] ) && $fields['desc'] ) {
+			printf(
+				'<p>%s</p>',
+				esc_html( $fields['desc'] )
+			);
+		}
+		*/
 	}
 }
