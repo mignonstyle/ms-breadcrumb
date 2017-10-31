@@ -27,6 +27,7 @@ class MS_Breadcrumb_Field_Text extends MS_Breadcrumb_fields_Abstract {
 
 		<?php if ( isset( $fields['desc'] ) && $fields['desc'] ) : ?>
 			<p><?php echo esc_html( $fields['desc'] ); ?></p>
-		<?php endif;
+		<?php endif; ?>
+		<?php
 	}
 }
