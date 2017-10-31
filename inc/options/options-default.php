@@ -67,7 +67,7 @@ class MS_Breadcrumb_Options_Default {
 						'args'  => array(
 							'label_for' => 'fields-label2',
 							'desc'      => __( 'ふぃーるど2だよ', 'ms-breadcrumb' ),
-							'type'      => 'text',
+							'type'      => 'number',
 						),
 					),
 					'field_3' => array(
