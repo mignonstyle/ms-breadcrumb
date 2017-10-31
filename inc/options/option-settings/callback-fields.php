@@ -57,7 +57,9 @@ class MS_Breadcrumb_Callback_Fields {
 				break;
 
 			case 'textarea':
+				new MS_Breadcrumb_Field_Textarea( $fields );
 				break;
+
 			case 'checkbox':
 				break;
 			case 'radio':
@@ -72,6 +74,13 @@ class MS_Breadcrumb_Callback_Fields {
 				break;
 			default:
 				break;
+		}
+
+		if ( isset( $fields['desc'] ) && $fields['desc'] ) {
+			printf(
+				'<p>%s</p>',
+				esc_html( $fields['desc'] )
+			);
 		}
 	}
 }
