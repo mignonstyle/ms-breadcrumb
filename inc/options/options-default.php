@@ -26,7 +26,7 @@ class MS_Breadcrumb_Options_Default {
 	public function __construct() {
 		$includes = array(
 			'/option-settings',
-			'/option-fields',
+			//'/option-fields',
 		);
 
 		foreach ( $includes as $include ) {
@@ -34,7 +34,7 @@ class MS_Breadcrumb_Options_Default {
 				require_once( $file );
 			}
 
-			require_once( plugin_dir_path( __FILE__ ) . 'fields-abstract.php' );
+			//require_once( plugin_dir_path( __FILE__ ) . 'fields-abstract.php' );
 		}
 	}
 
