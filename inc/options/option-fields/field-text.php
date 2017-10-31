@@ -14,14 +14,6 @@
 class MS_Breadcrumb_Field_Text {
 
 	/**
-	 * Constructor.
-	 *
-	 *
-	 */
-	private $fieldname;
-	private $value;
-
-	/**
 	 * Constructor Define.
 	 *
 	 * @param string $fieldname Field id and name.

@@ -29,8 +29,7 @@ class MS_Breadcrumb_Option_Sanitize {
 
 		$output = MS_Breadcrumb_Admin_Options::get_option();
 
-		// 作業途中.
-		// デフォルトのtypeによって検証させる.
+		// 作業途中. デフォルトのtypeによって検証させる.
 		foreach ( $sections as $section_key => $section ) {
 
 			if ( isset( $section['fields'] ) ) {
