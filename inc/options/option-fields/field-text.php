@@ -29,11 +29,11 @@ class MS_Breadcrumb_Field_Text extends MS_Breadcrumb_fields_Abstract {
 		}
 
 		printf(
-			'<input type="%1$s" id="%2$s" name="%2$s" value="%3$s" class="%4$s" />',
-			esc_attr( $fields['type'] ),
+			'<input id="%1$s" name="%1$s" value="%2$s" class="%3$s" type="%4$s" />',
 			esc_attr( $fields['fieldname'] ),
 			esc_attr( $fields['value'] ),
-			esc_attr( $class )
+			esc_attr( $class ),
+			esc_attr( $fields['type'] )
 		);
 
 		if ( isset( $fields['desc'] ) && $fields['desc'] ) {
