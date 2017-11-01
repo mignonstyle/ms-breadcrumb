@@ -63,7 +63,9 @@ abstract class MS_Breadcrumb_Fields_Abstract {
 	}
 
 	/**
+	 * Add a legend element to the field.
 	 *
+	 * @return string
 	 */
 	public function get_legend() {
 		$field  = $this->get();
@@ -80,7 +82,9 @@ abstract class MS_Breadcrumb_Fields_Abstract {
 	}
 
 	/**
+	 * Add a label element to the field.
 	 *
+	 * @return string
 	 */
 	public function get_label() {
 		$field = $this->get();
@@ -98,7 +102,9 @@ abstract class MS_Breadcrumb_Fields_Abstract {
 	}
 
 	/**
+	 * Add a field group class to the field.
 	 *
+	 * @return string
 	 */
 	public function get_class_field_group() {
 		$field       = $this->get();
