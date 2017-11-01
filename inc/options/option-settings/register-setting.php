@@ -56,9 +56,7 @@ class MS_Breadcrumb_Register_Settings {
 				// Add the fields.
 				foreach ( $section['fields'] as $field_key => $field ) {
 
-					if ( ( '' == $field_key && '0' != $field_key ) ||
-					     ( ! array_key_exists( 'type', $field['args'] ) ) ||
-						 ( '' == $field['args']['type'] && '0' != $field['args']['type'] ) ) {
+					if ( ( '' == $field_key && '0' != $field_key ) || ( ! array_key_exists( 'type', $field['args'] ) ) || ( '' == $field['args']['type'] && '0' != $field['args']['type'] ) ) {
 						continue;
 					}
 

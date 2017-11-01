@@ -26,13 +26,9 @@ class MS_Breadcrumb_Callback_Fields {
 	 */
 	public function callback_field_content( $field ) {
 
-		if ( ( '0' != $field['type'] && ! $field['type'] ) ||
-		     ( '0' != $field['fieldname'] && ! $field['fieldname'] ) ) {
+		if ( ( '0' != $field['type'] && ! $field['type'] ) || ( '0' != $field['fieldname'] && ! $field['fieldname'] ) ) {
 			return;
 		}
-
-
-
 
 		$options   = MS_Breadcrumb_Admin_Options::get_option();
 
