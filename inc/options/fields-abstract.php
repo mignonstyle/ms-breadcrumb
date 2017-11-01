@@ -41,6 +41,7 @@ abstract class MS_Breadcrumb_Fields_Abstract {
 	 * @param string $fields Field items.
 	 */
 	protected function set( $fields ) {
+
 		if ( empty( $fields['fieldname'] ) ) {
 			return;
 		}
@@ -59,5 +60,56 @@ abstract class MS_Breadcrumb_Fields_Abstract {
 		}
 
 		return $this->fields;
+	}
+
+	/**
+	 * Add a legend element to the field.
+	 *
+	 * @return string
+	 */
+	public function get_legend() {
+		$field  = $this->get();
+		$legend = '';
+
+		if ( true === $field['legend'] ) {
+			$legend = sprintf(
+				'<legend class="screen-reader-text"><span>%1$s</span></legend>',
+				$field['fieldtitle']
+			);
+		}
+
+		return $legend;
+	}
+
+	/**
+	 * Add a label element to the field.
+	 *
+	 * @return string
+	 */
+	public function get_label() {
+		$field = $this->get();
+		$label = '';
+
+		if ( isset( $field['label'] ) ) {
+			$label = sprintf(
+				'<label for="%1$s">%2$s</label>',
+				esc_attr( $field['fieldname'] ),
+				esc_attr( $field['label'] )
+			);
+		}
+
+		return $label;
+	}
+
+	/**
+	 * Add a field group class to the field.
+	 *
+	 * @return string
+	 */
+	public function get_class_field_group() {
+		$field       = $this->get();
+		$field_group = ( ! $field['fieldtitle'] ) ? 'field-group' : '';
+
+		return $field_group;
 	}
 }

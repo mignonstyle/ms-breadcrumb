@@ -25,26 +25,31 @@ class MS_Breadcrumb_Callback_Fields {
 	 * @param array $field Option field content.
 	 */
 	public function callback_field_content( $field ) {
-		if ( empty( $field ) && isset( $field['name'] ) ) {
+
+		if ( ( '0' != $field['type'] && ! $field['type'] ) || ( '0' != $field['fieldname'] && ! $field['fieldname'] ) ) {
 			return;
 		}
 
 		$options   = MS_Breadcrumb_Admin_Options::get_option();
 
-		$fieldname = MS_Breadcrumb_Options_Default::OPTION_KEY . '[' . $field['fieldname'] . ']';
-		$type      = isset( $field['type'] ) ? $field['type'] : '';
-		$value     = isset( $options[ $field['fieldname'] ] ) ? $options[ $field['fieldname'] ] : '';
-		$label     = isset( $field['label_for'] ) ? $field['label_for'] : '';
-		$desc      = isset( $field['desc'] ) ? $field['desc'] : '';
-		$class     = isset( $field['class'] ) ? $field['class'] : '';
+		$fieldname   = MS_Breadcrumb_Options_Default::OPTION_KEY . '[' . $field['fieldname'] . ']';
+		$type        = isset( $field['type'] ) ? $field['type'] : '';
+		$value       = isset( $options[ $field['fieldname'] ] ) ? $options[ $field['fieldname'] ] : '';
+		$fieldtitle  = isset( $field['fieldtitle'] ) ? $field['fieldtitle'] : '';
+		$label       = isset( $field['label'] ) ? $field['label'] : '';
+		$desc        = isset( $field['desc'] ) ? $field['desc'] : '';
+		$legend      = isset( $field['legend'] ) ? $field['legend'] : '';
+		$class       = isset( $field['class'] ) ? $field['class'] : '';
 
 		$fields = array(
-			'fieldname' => $fieldname,
-			'type'      => $type,
-			'value'     => $value,
-			'label'     => $label,
-			'desc'      => $desc,
-			'class'     => $class,
+			'fieldname'   => $fieldname,
+			'type'        => $type,
+			'value'       => $value,
+			'fieldtitle'  => $fieldtitle,
+			'label'       => $label,
+			'desc'        => $desc,
+			'legend'      => $legend,
+			'class'       => $class,
 		);
 
 		switch ( $type ) {
@@ -61,6 +66,7 @@ class MS_Breadcrumb_Callback_Fields {
 				break;
 
 			case 'checkbox':
+				new MS_Breadcrumb_Field_Checkbox( $fields );
 				break;
 			case 'radio':
 				break;

@@ -53,22 +53,34 @@ class MS_Breadcrumb_Register_Settings {
 			);
 
 			if ( isset( $section['fields'] ) ) {
-
 				// Add the fields.
 				foreach ( $section['fields'] as $field_key => $field ) {
 
+					if ( ( '' == $field_key && '0' != $field_key ) || ( ! array_key_exists( 'type', $field['args'] ) ) || ( '' == $field['args']['type'] && '0' != $field['args']['type'] ) ) {
+						continue;
+					}
+
+					$type        = isset( $field['args']['type'] ) ? $field['args']['type'] : '';
+					$fieldtitle  = isset( $field['title'] ) ? $field['title'] : '';
+					$label       = isset( $field['args']['label'] ) ? $field['args']['label'] : '';
+					$desc        = isset( $field['args']['desc'] ) ? $field['args']['desc'] : '';
+					$legend      = isset( $field['args']['legend'] ) ? $field['args']['legend'] : '';
+					$class       = isset( $field['args']['class'] ) ? $field['args']['class'] : '';
+
 					add_settings_field(
 						$field_key,
-						$field['title'],
+						$fieldtitle,
 						array( $callback_field, 'callback_field_content' ),
 						MS_Breadcrumb_Options_Default::OPTIONS_PAGE_SLUG,
 						$section_key,
 						array(
-							'fieldname' => $field_key,
-							'type'      => $field['args']['type'],
-							'label'     => $field['args']['label'],
-							'desc'      => $field['args']['desc'],
-							'class'     => $field['args']['class'],
+							'fieldname'   => $field_key,
+							'type'        => $type,
+							'fieldtitle'  => $fieldtitle,
+							'label'       => $label,
+							'desc'        => $desc,
+							'legend'      => $legend,
+							'class'       => $class,
 						)
 					);
 				}

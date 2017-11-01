@@ -17,13 +17,13 @@ class MS_Breadcrumb_Field_Textarea extends MS_Breadcrumb_fields_Abstract {
 	 * Sets option field items.
 	 */
 	protected function set_field() {
-		$fields = $this->get();
-		$class  = empty( $fields['class'] ) ? 'large-text' : $fields['class'];
+		$field = $this->get();
+		$class = empty( $field['class'] ) ? 'large-text' : $field['class'];
 
 		printf(
 			'<textarea id="%1$s" name="%1$s" rows="10" cols="50" class="%3$s">%2$s</textarea>',
-			esc_attr( $fields['fieldname'] ),
-			esc_attr( $fields['value'] ),
+			esc_attr( $field['fieldname'] ),
+			esc_attr( $field['value'] ),
 			esc_attr( $class )
 		);
 	}
